@@ -81,7 +81,7 @@
   }
   
 
-.Meat {
+.Beef {
     width: 80%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
@@ -97,6 +97,15 @@
     border-radius: 20px;
 }
 
+.VeganCheese {
+  width: 90%;
+  height: 4.5%;
+  margin: 2% auto;
+  background: linear-gradient(#dad2aa, #e2d693);
+  border-radius: 20px;
+}
+
+
 .Salad {
     width: 85%;
     height: 7%;
@@ -105,9 +114,52 @@
     border-radius: 20px;
 }
 
+.Tomato {
+  width: 85%;
+  height: 4%;
+  margin: 2% auto;
+  background: linear-gradient(#ee0404, #ac030c);
+  border-radius: 20px;
+}
+
 .Bacon {
     width: 80%;
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
+}
+
+.Fish {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(rgb(241, 240, 220), white);
+  margin: 2% auto;
+}
+
+.Seitan {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(rgb(184, 162, 138), rgb(116, 107, 79));
+  margin: 2% auto;
+}
+
+.Chicken {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(rgb(158, 139, 105), rgb(151, 134, 103));
+  margin: 2% auto;
+}
+
+.Sausage {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(rgb(82, 72, 54), rgb(78, 54, 54));
+  margin: 2% auto;
+}
+
+.VeggieBurger {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(rgb(97, 82, 53), rgb(68, 59, 40));
+  margin: 2% auto;
 }
