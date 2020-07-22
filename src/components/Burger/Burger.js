@@ -5,30 +5,33 @@ import './Burger.css';
 
 
 const Burger = (props) => {
-    let transformedIngredients = Object.keys(props.ingredients)
-      .map(igKey => {
+    let ingredients = Object.keys( props.ingredients )
+      .map( igKey => {
           // converting object in state to an array
-          return [...Array(props.ingredients[igKey])].map((_, index) => {
-              return <BurgerIngredients key={igKey + index} type={igKey} />
-          });
+          return [...Array(props.ingredients[igKey] )].map((_, index) => {
+              return ( <BurgerIngredients key={igKey + index} type={igKey} />
+              )
+          
       })
+    })
       .reduce((arr, el) => {
           return arr.concat(el)
       }, []);
-      if (transformedIngredients.length === 0) {
-          transformedIngredients = <p>Please add your ingredients</p>
+      if (ingredients.length === 0) {
+          ingredients = <p>Please add your ingredients</p>
 
       }
-      console.log(transformedIngredients);
+      console.log(ingredients);
 
     return (
       <div className="Burger">
           <BurgerIngredients type="bread-top" />
-         {transformedIngredients}
+         {ingredients}
           <BurgerIngredients type="bread-bottom" />
       </div>
 
     )
+    
 }
 
 export default Burger;

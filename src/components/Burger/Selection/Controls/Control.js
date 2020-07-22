@@ -7,7 +7,7 @@ const control = (props) => {
     return (
     <div className="Control">
     <div className="Label">{props.label}</div>
-    <button className="Add">+</button>
+    <button className="Add" onClick={props.added}>+</button>
     <button className="Remove">-</button>
 
   </div>
