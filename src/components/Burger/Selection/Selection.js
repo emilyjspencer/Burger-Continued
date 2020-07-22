@@ -21,7 +21,7 @@ const controls = [
 const selection = (props) => (
 
      <div className="Selection">
-         
+         <p>Current Price: {props.price}</p>
          {controls.map(control => {
              return (
              <Control
