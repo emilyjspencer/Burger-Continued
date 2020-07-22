@@ -21,7 +21,7 @@ const controls = [
 const selection = (props) => (
 
      <div className="Selection">
-         <p>Current Price: {props.price}</p>
+         <p>Current Price: <strong>{props.price.toFixed(2)}</strong></p>
          {controls.map(control => {
              return (
              <Control
