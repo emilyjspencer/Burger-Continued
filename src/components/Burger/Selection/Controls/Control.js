@@ -8,7 +8,7 @@ const control = (props) => {
     <div className="Control">
     <div className="Label">{props.label}</div>
     <button className="Add" onClick={props.added}>+</button>
-    <button className="Remove" onClick={props.removed}>-</button>
+    <button className="Remove" onClick={props.removed} disabled={props.disabled}>-</button>
 
   </div>
     )

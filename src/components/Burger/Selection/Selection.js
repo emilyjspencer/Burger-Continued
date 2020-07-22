@@ -14,7 +14,7 @@ const controls = [
     { label: 'Veggie Burger', type: 'veggieburger'},
     { label: 'Seitan', type: 'seitan'},
     { label: 'Sausage', type: 'sausage'},
-    { lable: 'Bacon', type: 'bacon'}
+    { label: 'Bacon', type: 'bacon'}
     
 ];
 
@@ -29,6 +29,7 @@ const selection = (props) => (
               label={control.label}
               added={() => props.ingredientAdded(control.type)}
               removed={() => props.ingredientRemoved(control.type)}
+              disabled={props.disabled[control.type]}
              
               />)
                        })}

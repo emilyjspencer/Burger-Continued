@@ -28,7 +28,7 @@ class BurgerBuilder extends Component {
         cheese: 0,
         bacon: 0,
         vegancheese: 0,
-        setain: 0,
+        seitan: 0,
         fish: 0,
         beef: 0,
         chicken: 0,
@@ -73,15 +73,26 @@ class BurgerBuilder extends Component {
   }
 
   render() {
+    const disabledInfo  = {
+      ...this.state.ingredients
+    }
+
+    for (let key in disabledInfo) {
+      disabledInfo[key] =  disabledInfo[key] <= 0
+    }
 
     return (
+     
       <aux>
         <div>
             <Burger ingredients={this.state.ingredients} />
         </div>
         <div><Selection 
           ingredientAdded={this.addIngredientsHandler} 
-          ingredientRemoved={this.removeIngredientsHandler}/></div>
+          ingredientRemoved={this.removeIngredientsHandler}
+          disabled={disabledInfo} 
+          />
+        </div>
       </aux>
 
     )
