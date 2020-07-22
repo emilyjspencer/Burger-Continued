@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Burger from '../../components/Burger/Burger';
+import Selection from '../../components/Burger/Selection/Selection';
 import aux from '../../hoc/aux';
 
 
@@ -24,7 +25,7 @@ class BurgerBuilder extends Component {
         <div>
             <Burger ingredients={this.state.ingredients} />
         </div>
-        <div>Options to add and remove ingredients</div>
+        <div><Selection /></div>
       </aux>
 
     )
