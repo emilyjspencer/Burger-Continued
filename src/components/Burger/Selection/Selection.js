@@ -35,7 +35,10 @@ const selection = (props) => (
                        })}
                        <br />
                        <br />
-                       <button className="OrderButton" disabled={!props.canOrder}>See your order</button>
+                       <button 
+                          className="OrderButton" 
+                          disabled={!props.canOrder}
+                          onClick={props.ordered}>See your order</button>
          </div>
 
 

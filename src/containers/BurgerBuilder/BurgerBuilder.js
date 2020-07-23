@@ -39,9 +39,14 @@ class BurgerBuilder extends Component {
         sausage: 0 
       },
       totalPrice: 2,
-      canOrder: false
+      canOrder: false,
+      readyToOrder: false
 
     }
+  }
+
+  readyToOrderHandler = () => {
+    this.setState({ readyToOrder: true });
   }
 
   updateOrderState = (ingredients) => {
@@ -104,7 +109,7 @@ class BurgerBuilder extends Component {
     return (
      
       <aux>
-        <Modal>
+        <Modal show={this.state.readyToOrder}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <div>
@@ -116,6 +121,7 @@ class BurgerBuilder extends Component {
           disabled={disabledInfo} 
           canOrder={this.state.canOrder}
           price={this.state.totalPrice}
+          ordered={this.readyToOrderHandler}
           />
         </div>
       </aux>
