@@ -49,6 +49,10 @@ class BurgerBuilder extends Component {
     this.setState({ readyToOrder: true });
   }
 
+  notReadyToOrderHandler = () => {
+    this.setState({ readyToOrder: false });
+  }
+
   updateOrderState = (ingredients) => {
     
     const sum = Object.keys(ingredients)
@@ -109,7 +113,7 @@ class BurgerBuilder extends Component {
     return (
      
       <aux>
-        <Modal show={this.state.readyToOrder}>
+        <Modal show={this.state.readyToOrder} modalClosed={this.notReadyToOrderHandler}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <div>
