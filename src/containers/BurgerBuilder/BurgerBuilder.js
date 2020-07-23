@@ -53,6 +53,10 @@ class BurgerBuilder extends Component {
     this.setState({ readyToOrder: false });
   }
 
+  continueWithOrderHandler =() => {
+    alert('Continue with order')
+  }
+
   updateOrderState = (ingredients) => {
     
     const sum = Object.keys(ingredients)
@@ -114,7 +118,10 @@ class BurgerBuilder extends Component {
      
       <aux>
         <Modal show={this.state.readyToOrder} modalClosed={this.notReadyToOrderHandler}>
-          <OrderSummary ingredients={this.state.ingredients} />
+          <OrderSummary 
+            ingredients={this.state.ingredients} 
+            continueWithOrder={this.continueWithOrderHandler}
+            cancelOrder={this.notReadyToOrderHandler} />
         </Modal>
         <div>
             <Burger ingredients={this.state.ingredients} />
