@@ -18,7 +18,7 @@ const sideDrawer = (props) => {
     return (
       <aux>
       <Backdrop show={props.open} clicked={props.closed} />
-      <div className={"SideDrawer"}>
+      <div className="SideDrawer">
           <Logo height="11%" />
           <nav>
              <NavigationItems /> 
