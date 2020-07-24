@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 import aux from '../../hoc/aux';
-import './Layout.css';
+import styles from './Layout.module.css';
 
 class Layout extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Layout extends Component {
               open={this.state.showSideDrawer}  
               closed={this.sideDrawerClosedHandler}></SideDrawer>
         
-        <main className="content">{this.props.children}</main>
+        <main className={styles.Content}>{this.props.children}</main>
         </aux>
     )
   }

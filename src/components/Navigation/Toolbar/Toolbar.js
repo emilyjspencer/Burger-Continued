@@ -3,21 +3,23 @@ import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
-import './Toolbar.css'
+import styles from './Toolbar.module.css'
 
-const toolbar = (props) => {
+const toolbar = (props) => (
 
-    return (
-        <header className="Toolbar">
+ 
+        <header className={styles.Toolbar}>
             <DrawerToggle clicked={props.drawerToggleClicked} />
-            <Logo height="80%"/>
-            <nav className="DesktopOnly">
+            <div className={styles.Logo}>
+                <Logo />
+            </div>
+            <nav className={styles.DesktopOnly}>
                 <NavigationItems />
             </nav>
         </header>
-    )
+    
 
-}
+)
 
 
 export default toolbar;

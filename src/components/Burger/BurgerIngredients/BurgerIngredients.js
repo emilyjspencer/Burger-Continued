@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './BurgerIngredients.css';
+import styles from './BurgerIngredients.module.css';
 //import classes from './BurgerIngredients.css';
 
 
@@ -13,45 +13,45 @@ class BurgerIngredients extends Component  {
     switch (this.props.type) {
         case ('bread-bottom'):
       
-          ingredient = <div className="BreadBottom"></div>
+          ingredient = <div className={styles.BreadBottom}></div>
           break;
           case('bread-top'):
             ingredient = (
-                <div className="BreadTop">
-                    <div className="Seeds1"></div>
-                        <div className="Seeds2"></div>
+                <div className={styles.BreadTop}>
+                    <div className={styles.Seeds1}></div>
+                        <div className={styles.Seeds2}></div>
                     </div>
             );
             break;
               case('beef'):
-                ingredient = <div className="Beef"></div>
+                ingredient = <div className={styles.Beed}></div>
                 break;
               case('cheese'):
-                ingredient = <div className="Cheese"></div>
+                ingredient = <div className={styles.Cheese}></div>
                 break;
               case('vegancheese'):
-                ingredient = <div className="VeganCheese"></div>
+                ingredient = <div className={styles.VeganCheese}></div>
                 break;
               case('salad'):
-                ingredient = <div className="Salad"></div>
+                ingredient = <div className={styles.Salad}></div>
                 break;
               case('tomato'):
-                ingredient = <div className="Tomato"></div>
+                ingredient = <div className={styles.Tomato}></div>
                 break;
               case('bacon'):
-                ingredient = <div className="Bacon"></div>
+                ingredient = <div className={styles.Bacon}></div>
                 break;
               case('fish'):
-                ingredient = <div className="Fish"></div>
+                ingredient = <div className={styles.Fish}></div>
                 break;
               case('seitan'):
-                ingredient = <div className="Seitan"></div>
+                ingredient = <div className={styles.Seitan}></div>
                 break;
               case('chicken'):
-                ingredient = <div className="Chicken"></div>
+                ingredient = <div className={styles.Chicken}></div>
                 break;
               case('sausage'):
-                ingredient = <div className="Sausage"></div>
+                ingredient = <div className={styles.Sausage}></div>
                 break;
 
                 default:

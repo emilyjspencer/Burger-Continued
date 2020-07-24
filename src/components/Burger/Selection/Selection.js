@@ -1,7 +1,7 @@
 import React from 'react'
 import Control from './Controls/Control';
 
-import './Selection.css';
+import styles from './Selection.module.css';
 
 const controls = [
     { label: 'Cheese', type: 'cheese'},
@@ -20,7 +20,7 @@ const controls = [
 
 const selection = (props) => (
 
-     <div className="Selection">
+     <div className={styles.Selection}>
          <p>Current Price: <strong>{props.price.toFixed(2)}</strong></p>
          {controls.map(control => {
              return (
