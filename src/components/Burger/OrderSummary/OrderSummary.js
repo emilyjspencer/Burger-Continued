@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import aux from '../../../hoc/aux'; 
+import aux from '../../../hoc/Aux/aux'; 
 import Button from '../../UI/Button/Button';
 
 import './OrderSummary.css';
