@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import aux from '../../../hoc/aux'; 
 import Button from '../../UI/Button/Button';
 
+import './OrderSummary.css';
+
 class OrderSummary extends Component {
 
   componentWillUpdate() {
