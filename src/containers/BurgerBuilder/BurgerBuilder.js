@@ -4,6 +4,7 @@ import Selection from '../../components/Burger/Selection/Selection';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import aux from '../../hoc/Aux/aux';
 import axios from '../../axios-orders';
 
@@ -172,4 +173,4 @@ class BurgerBuilder extends Component {
 }
 
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
