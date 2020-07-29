@@ -28,25 +28,20 @@ class BurgerBuilder extends Component {
     super(props);
 
     this.state = {
-      ingredients: {
-        salad: 0,
-        cheese: 0,
-        bacon: 0,
-        vegancheese: 0,
-        seitan: 0,
-        fish: 0,
-        beef: 0,
-        chicken: 0,
-        veggieburger: 0,
-        tomato: 0,
-        sausage: 0 
-      },
+      ingredients: null,
       totalPrice: 2,
       canOrder: false,
       readyToOrder: false,
       loading: false
 
     }
+  }
+
+  componentDidMount = () => {
+    axios.get('https://react-burger-6b862.firebaseio.com/orders/ingredients.json')
+      .then(response => {
+        this.setState({ ingredients: response.data });
+      });
   }
 
   readyToOrderHandler = () => {
@@ -138,39 +133,49 @@ class BurgerBuilder extends Component {
     for (let key in disabledInfo) {
       disabledInfo[key] =  disabledInfo[key] <= 0
     }
-    let orderSummary = <OrderSummary 
+
+    let orderSummary = null;
+  
+    let burger = <Spinner />
+
+    if (this.state.ingredients) {
+      burger = (
+      <aux>
+      <Burger ingredients={this.state.ingredients} />
+
+      <Selection 
+        ingredientAdded={this.addIngredientsHandler} 
+        ingredientRemoved={this.removeIngredientsHandler}
+        disabled={disabledInfo} 
+        canOrder={this.state.canOrder}
+        price={this.state.totalPrice}
+        ordered={this.readyToOrderHandler}
+        />
+        </aux>
+    );
+    orderSummary = <OrderSummary 
     ingredients={this.state.ingredients} 
     price={this.state.totalPrice}
     continueWithOrder={this.continueWithOrderHandler}
     cancelOrder={this.notReadyToOrderHandler} 
     />
+      }
+
     if ( this.state.loading ) {
       orderSummary = <Spinner />
     }
 
     return (
-     
-      <aux>
+     <aux>
         <Modal show={this.state.readyToOrder} modalClosed={this.notReadyToOrderHandler}>
           {orderSummary}
-        </Modal>
-        <div>
-            <Burger ingredients={this.state.ingredients} />
-        </div>
-        <div><Selection 
-          ingredientAdded={this.addIngredientsHandler} 
-          ingredientRemoved={this.removeIngredientsHandler}
-          disabled={disabledInfo} 
-          canOrder={this.state.canOrder}
-          price={this.state.totalPrice}
-          ordered={this.readyToOrderHandler}
-          />
-        </div>
-      </aux>
 
-    )
+        </Modal>
+        {burger}
+      </aux>
+    ) 
   }
 }
-
+  
 
 export default withErrorHandler(BurgerBuilder, axios);
